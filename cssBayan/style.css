@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+li {
+  margin: 0;
+}
+
+ul[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.header_title {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 10px;
+}
+
+
+.wapper-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.accordion-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding-right: 2.2rem;
+    padding-left: 1rem;
+    overflow: hidden;
+}
+
+.accordion-item input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.accordion-item label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 2em;
+  background: #4CAF50;
+  color: #fff;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+}
+
+.accordion-item input:checked ~ .img_wrapper {
+    max-height: 100vh;
+}
+
+.accordion-item label::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 1.5em;
+    height: 1em;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+  }
+
+.accordion-item input[type=checkbox]:checked + label::after {
+    transform: rotate(-45deg);
+}
+
+  .accordion-item input[type=checkbox] + label::after {
+    content: "+";
+  }
+
+.img_wrapper {
+    padding: 0px 150px;
+    max-height: 0;
+    overflow: hidden;
+    background: #fff;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+}
